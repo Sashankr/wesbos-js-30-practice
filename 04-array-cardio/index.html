@@ -131,13 +131,10 @@
       // Sort the people alphabetically by last name
 
       const alphabetical = people.sort((a, b) => {
-        const splitNameA = a.split(",");
-        const lastNameA = splitNameA[1].trim();
+        const [aFirst, aLast] = a.split(", ");
+        const [bFirst, bLast] = b.split(", ");
 
-        const splitNameB = b.split(",");
-        const lastNameB = splitNameB[1].trim();
-
-        return lastNameB < lastNameA ? 1 : -1;
+        return aLast > bLast ? 1 : -1;
       });
 
       console.log("alphabetical order");
